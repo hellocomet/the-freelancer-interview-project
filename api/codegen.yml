@@ -1,0 +1,21 @@
+overwrite: true
+schema: ['src/**/*schema.ts']
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+generates:
+  generated/graphql.ts:
+    config:
+      namingConvention:
+        enumValues: keep
+      enumsAsConst: true
+      defaultMapper: Partial<{T}>
+    plugins:
+      - typescript
+      - typescript-resolvers
+
+  generated/schema.graphql:
+    plugins:
+      - schema-ast
+    config:
+      includeDirectives: true
