@@ -30,5 +30,12 @@ module.exports = {
         NODE_ENV: 'development',
       },
     }),
+
+    createApp({
+      name: 'codegen-api',
+      cwd: 'api',
+      script: 'npm run codegen -- --watch',
+      watch: ['codegen.yml'],
+    }),
   ],
 }
