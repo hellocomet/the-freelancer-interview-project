@@ -1,5 +1,19 @@
 import { gql } from 'graphql-tag'
-import { Resolvers } from '../generated/graphql'
+import { Language, Resolvers } from '../generated/graphql'
+
+const MOCK_FREELANCER = {
+  avatar: {
+    '64x64': '',
+    '256x256': '',
+    '512x512': '',
+  },
+  firstname: 'Gordon',
+  lastname: 'Champlin',
+  language: Language.KLINGON,
+  birthDate: new Date(1990, 12, 31).toISOString(),
+  isVisible: false,
+  retribution: 500,
+}
 
 export const typeDefs = gql`
   type Avatar {
