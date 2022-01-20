@@ -1,0 +1,18 @@
+overwrite: true
+schema: ['../api/src/**/*schema.ts']
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+generates:
+  generated/graphql.ts:
+    documents: 'src/**/*.tsx'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-document-nodes
+    config:
+      scalars:
+        Date: 'string'
+      exportFragmentSpreadSubTypes: true
+      namingConvention:
+        enumValues: keep

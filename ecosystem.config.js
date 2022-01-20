@@ -39,5 +39,12 @@ module.exports = {
     }),
 
     createApp({ name: 'app', cwd: 'app', script: 'npm run start' }),
+
+    createApp({
+      name: 'codegen-app',
+      cwd: 'app',
+      script: 'npm run codegen -- --watch',
+      watch: ['codegen.yml'],
+    }),
   ],
 }
