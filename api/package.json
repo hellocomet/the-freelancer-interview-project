@@ -1,0 +1,29 @@
+{
+  "name": "@the-freelancer-interview-project/api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "watch": "tsc -w --pretty --preserveWatchOutput",
+    "dev": "node --inspect=0.0.0.0:9229 --enable-source-maps --no-lazy ./dist/src",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "lint:ts": "tsc"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^8.3.1",
+    "@graphql-tools/utils": "^8.5.5",
+    "graphql": "^16.2.0",
+    "graphql-tag": "^2.12.6",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "winston": "^3.3.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^3.1.0",
+    "@graphql-codegen/cli": "^2.3.0",
+    "@graphql-codegen/schema-ast": "^2.4.0",
+    "@graphql-codegen/typescript": "^2.4.1",
+    "@graphql-codegen/typescript-resolvers": "^2.4.2",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.5"
+  }
+}

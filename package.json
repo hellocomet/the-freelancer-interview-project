@@ -1,0 +1,44 @@
+{
+  "name": "the-freelancer-interview-project",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "scripts": {
+    "up": "pm2 start ecosystem.config.js",
+    "down": "pm2 delete ecosystem.config.js",
+    "restart": "pm2 delete ecosystem.config.js && pm2 start ecosystem.config.js",
+    "log": "pm2 log",
+    "list": "pm2 ls",
+    "codegen": "npm run codegen -w api && npm run codegen -w app",
+    "lint": "ultra _lint",
+    "_lint": "npm run lint:prettier && npm run lint:eslint && npm run lint:ts --workspaces --if-present",
+    "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint ."
+  },
+  "ultra": {
+    "concurrent": [
+      "_lint"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "pm2": "^5.1.2",
+    "prettier": "^2.5.1",
+    "prettier-plugin-organize-imports": "^2.3.4",
+    "typescript": "^4.5.4",
+    "ultra-runner": "^3.10.5"
+  }
+}
