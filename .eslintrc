@@ -27,16 +27,7 @@
           "version": "detect"
         }
       },
-      "extends": [
-        "plugin:@typescript-eslint/recommended",
-
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
-
-        // prettier config will turn rules off according to prettier, it should always be at the end
-        "prettier"
-      ]
+      "extends": ["react-app", "react-app/jest"]
     }
   ]
 }
