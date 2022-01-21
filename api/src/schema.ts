@@ -17,9 +17,9 @@ const MOCK_FREELANCER = {
 
 export const typeDefs = gql`
   type Avatar {
-    smallUrl: String
-    largeUrl: String
-    xLargeUrl: String
+    smallUrl: String!
+    largeUrl: String!
+    xLargeUrl: String!
   }
 
   enum Language {
@@ -28,18 +28,16 @@ export const typeDefs = gql`
     KLINGON
   }
 
-  # Todo
-  # type Profile {
-  #   ...
-  # }
+  # Todo: Write a type for the freelancer's profile.
 
   type Query {
-    helloWorld: String
-    # Todo
-    # myProfile: Profile
+    helloWorld: String!
+
+    # Todo: Write a query to retrieve the current freelancer's profile.
+    # Ex: myProfile: Profile!
   }
 
-  # Todo
+  # Todo: Write a mutation to update the current freelancer's profile.
   # type Mutation {
   #   ...
   # }
@@ -47,13 +45,23 @@ export const typeDefs = gql`
 
 export const resolvers: Resolvers = {
   Query: {
+    /**
+     * Example of resolver.
+     */
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     helloWorld(root, args, context) {
       return 'Hello!'
     },
+
+    /**
+     * @Todo
+     * Implement the query to retrieve the current freelancer's profile.
+     */
   },
 
   /**
    * @Todo
+   * Implement the mutation to update the current freelancer's profile.
    */
   // Mutation: {},
 }
