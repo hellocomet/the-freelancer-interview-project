@@ -8,7 +8,7 @@ type Resolvers = {
   Query?: Record<string, unknown>
 }
 
-export type TypeDefsAndResolvers = {
+type TypeDefsAndResolvers = {
   typeDefs: DocumentNode
   resolvers: Resolvers
 }
@@ -46,7 +46,7 @@ export function graphqlMiddleware(
   })
 
   return async function graphqlMiddleware(ctx, next) {
-    if (ctx.path === '/graphql' && ctx.method === 'POST') {
+    if (ctx.path === '/api/graphql' && ctx.method === 'POST') {
       await processGraphql(ctx, schema)
     }
 
