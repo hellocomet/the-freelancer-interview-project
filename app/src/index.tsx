@@ -1,4 +1,13 @@
+import gql from 'graphql-tag'
 import ReactDOM from 'react-dom'
+
+gql`
+  fragment AvatarFragmentExample on Avatar {
+    smallUrl
+    largeUrl
+    xLargeUrl
+  }
+`
 
 const mountingPoint = document.getElementById('root')
 
