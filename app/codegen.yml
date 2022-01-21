@@ -4,12 +4,11 @@ hooks:
   afterAllFileWrite:
     - prettier --write
 generates:
-  generated/graphql.ts:
+  src/generated/graphql.ts:
     documents: 'src/**/*.tsx'
     plugins:
       - typescript
       - typescript-operations
-      - typescript-document-nodes
     config:
       scalars:
         Date: 'string'
