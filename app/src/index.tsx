@@ -1,8 +1,16 @@
 import gql from 'graphql-tag'
 import ReactDOM from 'react-dom'
 
-gql`
-  fragment AvatarFragmentExample on Avatar {
+/**
+ * The type `AvatarExampleFragment` in automatically generated.
+ * The document can be passed to any graphql client.
+ *
+ * @example
+ * import { AvatarExampleFragment } from './generated/graphql'
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const AvatarExampleFragmentDocument = gql`
+  fragment AvatarExample on Avatar {
     smallUrl
     largeUrl
     xLargeUrl
@@ -17,4 +25,4 @@ if (mountingPoint == null) {
   )
 }
 
-ReactDOM.render(<>{/* FIXME */}</>, mountingPoint)
+ReactDOM.render(<>{/** @Todo */}</>, mountingPoint)
