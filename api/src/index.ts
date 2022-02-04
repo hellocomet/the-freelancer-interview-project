@@ -1,13 +1,9 @@
-import Koa from 'koa'
-import bodyParser from 'koa-bodyparser'
-import { graphqlMiddleware } from './graphql'
-import * as schema from './schema'
+import Server from './Server'
 
-export const app = new Koa()
+const server: Server = new Server()
 
-app.use(bodyParser())
-app.use(graphqlMiddleware([schema]))
+const server_port = 5000
 
-app.listen({ port: 4000 }, () => {
-  console.log(`🚀 To infinity...and beyond!`)
+server.run(server_port, () => {
+  console.log(`[SERVER] Started on http://localhost:${server_port}`)
 })
